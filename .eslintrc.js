@@ -1,21 +1,30 @@
 module.exports = {
-  root: true,
-  extends: 'airbnb-base',
-  env: {
-    browser: true,
+  "env": {
+      "browser": true,
+      "es2021": true
   },
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    allowImportExportEverywhere: true,
-    sourceType: 'module',
-    requireConfigFile: false,
+  "extends": ["standard-with-typescript"],
+  "overrides": [
+      {
+          "env": {
+              "node": true
+          },
+          "files": [
+              ".eslintrc.{js,cjs}"
+          ],
+          "parserOptions": {
+              "sourceType": "script"
+          }
+      }
+  ],
+  "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module",
+      "project": "tsconfig.json"
   },
-  rules: {
-    // allow reassigning param
-    'no-param-reassign': [2, { props: false }],
-    'linebreak-style': ['error', 'unix'],
-    'import/extensions': ['error', {
-      js: 'always',
-    }],
-  },
-};
+  "rules": {
+      "semi": "off",
+      "comma-dangle": "off",
+      "quotes": ["error", "single"],
+  }
+}

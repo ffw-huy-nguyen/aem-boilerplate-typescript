@@ -1,0 +1,1 @@
+import{toCamelCase}from"./aem.js";const myTypeScriptFunction=t=>"Just want to say hello to "+toCamelCase(t);export{myTypeScriptFunction};
